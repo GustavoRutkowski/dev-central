@@ -1,0 +1,6 @@
+:root {
+    --main-color: #232323; 
+    --border-color: #131313;
+    --default-padding: 1rem;
+    --white-opacity: rgba(255, 255, 255, 0.05);
+}
