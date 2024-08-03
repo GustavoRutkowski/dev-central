@@ -3,47 +3,54 @@ aside#contacts {
     background-color: var(--main-color);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-
-nav.contacts__contacts {
-    overflow-x: auto;
-    flex-grow: 1;
+    justify-content: start;
+    align-items: center;
 }
 
 ul.contacts__contacts-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+    flex: 1 1 auto;
+    overflow: auto;
 }
 
-li.contacts-list__contact {
+li.contacts-list__contact,
+li.contacts-list__add-contact {
     padding: var(--default-padding);
     cursor: pointer;
 }
 
 li.contacts-list__contact:hover,
-li.contacts-list__contact.contacts-list__contact--select {
+li.contacts-list__contact.contacts-list__contact--select,
+li.contacts-list__add-contact:hover {
     background-color: var(--white-opacity);
 }
 
-.contact__picture {
-    border-radius: 50%;
+li.contacts-list__add-contact > i {
     width: 5rem;
     height: 5rem;
-    overflow: hidden;
+    color: #fff;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__picture {
+    width: 5rem;
+    height: 5rem;
 }
 
 .contact__picture > img {
+    border-radius: 50%;
     width: 100%;
     height: 100%;
 }
 
 a.contacts__settings {
-    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    flex: 0 0 auto;
+    border-top: 2px solid rgba(0, 0, 0, 0.404);
     width: 7rem;
     height: 7rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-decoration: none;
     color: white;
     display: flex;

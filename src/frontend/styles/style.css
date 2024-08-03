@@ -5,10 +5,9 @@
 @import url('./contacts.css');
 
 main {
-    width: 100%;
+    flex-grow: 1;
+    overflow: auto;
     background-color: #000;
     display: flex;
     justify-content: start;
-    flex-grow: 1;
 }
-
