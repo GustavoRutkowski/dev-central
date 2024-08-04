@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A DevCentral é um projeto com o intuito de ajudar desenvolvedores a se comunicarem com designs, códigos, repositórios e membros da equipe em um só lugar.">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="shortcut icon" href="../imgs/dc-mini-logotype.png" type="image/x-icon">
+    <title>DevCentral - Login</title>
+</head>
+<body>
+    <main id="box">
+        <div class="logo-container">
+            <img src="../imgs/dc-logotype.png" alt="logo">
+        </div>
+
+        <section class="login-box">
+            <h2>Login</h2>
+
+            <form id="login-form" class="login-box__form" action="post">
+                <fieldset class="form__section">
+                    <label for="email-input">Email:</label>
+                    <input type="email" id="email-input" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+                    " placeholder="seuemail@exemplo.com" required>
+                </fieldset>
+
+                <fieldset class="form__section">
+                    <label for="pass-input">Senha:</label>
+                    <input type="password" id="pass-input" minlength="8" required>
+                </fieldset>
+            </form>
+
+            <button form="login-form" class="login-box__login-btn" type="submit">Entrar</button>
+
+            <span class="login-box__sign-up-link">Ainda não possui uma conta? <a href="./sign-up.html">Cadastre-se</a>.</span>
+        </section>
+    </main>
+</body>
+</html>

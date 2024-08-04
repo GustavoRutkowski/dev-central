@@ -4,5 +4,6 @@
     --border-color: #131313;
     --default-padding: 1rem;
     --double-padding: calc(var(--default-padding) * 2);
+    --large-padding: calc(var(--double-padding) * 2);
     --white-opacity: rgba(255, 255, 255, 0.05);
 }

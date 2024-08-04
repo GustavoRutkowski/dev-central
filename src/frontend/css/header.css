@@ -15,6 +15,7 @@ header {
     width: fit-content;
     height: 70%;
     min-height: 2.4rem;
+    max-height: 2.6rem;
 }
 
 #logo-container > img {

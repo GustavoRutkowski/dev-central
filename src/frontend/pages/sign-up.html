@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A DevCentral é um projeto com o intuito de ajudar desenvolvedores a se comunicarem com designs, códigos, repositórios e membros da equipe em um só lugar.">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="shortcut icon" href="../imgs/dc-mini-logotype.png" type="image/x-icon">
+    <title>DevCentral - Sign-Up</title>
+</head>
+<body>
+    <main id="box">
+        <div class="logo-container">
+            <img src="../imgs/dc-logotype.png" alt="logo">
+        </div>
+
+        <section class="sign-up-box">
+            <h2>Registro</h2>
+
+            <form id="sign-up-form" class="sign-up-box__form" action="post">
+                <fieldset class="form__section">
+                    <label for="email-input">Nome Completo:</label>
+                    <input type="text" id="text-input" placeholder="Digite seu nome aqui" required>
+                </fieldset>
+
+                <fieldset class="form__section">
+                    <label for="email-input">Email:</label>
+                    <input type="email" id="email-input" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+                    " placeholder="seuemail@exemplo.com" required>
+                </fieldset>
+
+                <fieldset class="form__section">
+                    <label for="pass-input">Senha:</label>
+                    <input type="password" id="pass-input" minlength="8" required>
+                </fieldset>
+            </form>
+
+            <button form="sign-up-form" class="sign-up-box__sign-up-btn" type="submit">Cadastrar</button>
+
+            <span class="sign-up-box__login-link">Já possui uma conta? <a href="./login.html">Entrar</a>.</span>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,106 @@
+main#box {
+    flex-direction: column;
+    color: #fff;
+    overflow-y: auto;
+}
+
+main#box > .logo-container {
+    margin: 5rem auto;
+    width: 25%;
+}
+
+.logo-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+main#box > section.login-box,
+main#box > section.sign-up-box {
+    margin: 0 auto;
+    padding: var(--large-padding);
+    border-radius: 5px;
+    width: 50%;
+    background-color: var(--main-color);
+}
+
+section.login-box > h2,
+section.sign-up-box > h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+form.login-box__form,
+form.sign-up-box__form {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+fieldset.form__section {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+fieldset.form__section > label,
+fieldset.form__section > input,
+button.login-box__login-btn,
+button.sign-up-box__sign-up-btn {
+    font-size: 1.5rem;
+}
+
+
+fieldset.form__section > label {
+    font-weight: bold;
+}
+
+fieldset.form__section > input {
+    padding: 8px;
+    border-width: 2px solid gray;
+    width: 100%;
+}
+
+button.login-box__login-btn,
+button.sign-up-box__sign-up-btn {
+    margin-bottom: 1rem;
+    padding: 8px;
+    border: none;
+    width: 100%;
+    background-color: var(--secondary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+button.login-box__login-btn:hover,
+button.sign-up-box__sign-up-btn:hover {
+    opacity: 0.8;
+}
+
+.login-box__sign-up-link,
+.sign-up-box__login-link {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.login-box__sign-up-link > a,
+.sign-up-box__login-link > a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 460px) {
+    main#box > section.login-box,
+    main#box > section.sign-up-box {
+        width: 75%;
+    }
+}
