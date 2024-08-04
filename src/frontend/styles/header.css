@@ -1,8 +1,0 @@
-header {
-    padding: 3px var(--default-padding);
-    border-bottom: 2px solid var(--border-color);
-    width: 100%;
-    background-color: var(--main-color);
-    color: #aaa;
-    font-size: 8px;
-}

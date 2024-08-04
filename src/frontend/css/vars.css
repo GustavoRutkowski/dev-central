@@ -1,6 +1,8 @@
 :root {
     --main-color: #232323; 
+    --secondary-color: #69ff8a;
     --border-color: #131313;
     --default-padding: 1rem;
+    --double-padding: calc(var(--default-padding) * 2);
     --white-opacity: rgba(255, 255, 255, 0.05);
 }

@@ -20,14 +20,19 @@ li.contacts-list__add-contact {
 
 li.contacts-list__contact:hover,
 li.contacts-list__contact.contacts-list__contact--select,
-li.contacts-list__add-contact:hover {
+a.user__settings:hover {
     background-color: var(--white-opacity);
+}
+
+li.contacts-list__add-contact:hover > i,
+a.user__settings:hover {
+    color: var(--secondary-color);
 }
 
 li.contacts-list__add-contact > i {
     width: 5rem;
     height: 5rem;
-    color: #fff;
+    color: #aaa;
     font-size: 3rem;
     display: flex;
     justify-content: center;
@@ -45,20 +50,14 @@ li.contacts-list__add-contact > i {
     height: 100%;
 }
 
-a.contacts__settings {
+a.user__settings {
     flex: 0 0 auto;
     border-top: 2px solid rgba(0, 0, 0, 0.404);
     width: 7rem;
     height: 7rem;
     font-size: 2rem;
-    text-decoration: none;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-
-a.contacts__settings:hover {
-    background-color: var(--white-opacity);
 }

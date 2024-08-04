@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A DevCentral é um projeto com o intuito de ajudar desenvolvedores a se comunicarem com designs, códigos, repositórios e membros da equipe em um só lugar.">
 
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
+    <link rel="shortcut icon" href="./imgs/dc-mini-logotype.png" type="image/x-icon">
     <title>DevCentral</title>
 </head>
 <body>
     <header>
-        <h1>Início</h1>
+        <div id="logo-container">
+            <img src="./imgs/dc-logotype.png" alt="logo">
+        </div>
+
+        <div id="contact-container">
+            <div class="contact-container__picture">
+                <img src="./imgs/contact-sample3.png" alt="">
+            </div>
+
+            <span class="contact-container__name">Miguel Jefferson</span>
+            
+            <a href="./pages/contact-settings.html" class="contact-settings" title="Configurações do Servidor">
+                <i class="fa-solid fa-gear"></i>
+            </a>
+        </div>
     </header>
 
     <main>
@@ -33,12 +48,12 @@
                     </div>
                 </li>
 
-                <li title="Adicionar" class="contacts-list__add-contact">
+                <li title="Adicionar contato" class="contacts-list__add-contact">
                     <i class="fa-solid fa-plus"></i>
                 </li>
             </ul>
 
-            <a href="" class="contacts__settings">
+            <a href="./pages/user-settings.html" class="user__settings" title="Configurações de Usuário">
                 <i class="fa-solid fa-gear"></i>
             </a>
         </aside>
@@ -46,7 +61,7 @@
         <nav id="chats">
         </nav>
 
-        <section id="conversation"></section>
+        <section id="conversation-area"></section>
     </main>
 </body>
 </html>
