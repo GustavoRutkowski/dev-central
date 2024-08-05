@@ -6,7 +6,7 @@
     <meta name="description" content="A DevCentral é um projeto com o intuito de ajudar desenvolvedores a se comunicarem com designs, códigos, repositórios e membros da equipe em um só lugar.">
 
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/index.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
 
     <link rel="shortcut icon" href="./imgs/dc-mini-logotype.png" type="image/x-icon">
     <title>DevCentral</title>
@@ -64,5 +64,20 @@
 
         <section id="conversation-area"></section>
     </main>
+
+    <dialog id="modal">
+        <header class="modal__modal-header">
+            <div class="modal-header__options">
+                <button id="add-contact" class="options__option-btn options__option-btn--selected">Adicionar contato</button>
+                <button id="pending-requests" class="options__option-btn">Pedidos Pendentes</button>
+            </div>
+          
+            <button class="modal-header__close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+        
+        <section class="modal__modal-content">...</section>
+    </dialog>
 </body>
 </html>

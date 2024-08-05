@@ -1,0 +1,49 @@
+dialog#modal::backdrop { background-color: rgba(0, 0, 0, .4); }
+
+dialog#modal {
+    margin: auto;
+    border-radius: 1.5rem;
+    width: 75%;
+}
+
+header.modal__modal-header,
+section.modal__modal-content {
+    width: 100%;
+}
+
+header.modal__modal-header {
+    border: none;
+    padding: 0;
+    padding-right: var(--default-padding);
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.modal-header__options {
+    height: 100%;
+    flex-grow: 1;
+}
+
+button.options__option-btn {
+    padding: var(--default-padding);
+    border: none;
+    background-color: #000;
+    color: #fff;
+    transition: all .2s;
+}
+
+button.options__option-btn:hover,
+button.options__option-btn.options__option-btn--selected {
+    border: none;
+    border-radius: 1.5rem 1.5rem 0 0;
+    background-color: var(--main-color);
+}
+
+section.modal__modal-content {
+    padding: var(--double-padding);
+    height: 100%;
+    background-color: var(--main-color);
+    color: #fff;
+}
