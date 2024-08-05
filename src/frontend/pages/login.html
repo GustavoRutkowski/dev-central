@@ -6,6 +6,7 @@
     <meta name="description" content="A DevCentral é um projeto com o intuito de ajudar desenvolvedores a se comunicarem com designs, códigos, repositórios e membros da equipe em um só lugar.">
 
     <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="../js/login.js" defer></script>
 
     <link rel="shortcut icon" href="../imgs/dc-mini-logotype.png" type="image/x-icon">
     <title>DevCentral - Login</title>
@@ -22,7 +23,7 @@
             <form id="login-form" class="login-box__form" action="post">
                 <fieldset class="form__section">
                     <label for="email-input">Email:</label>
-                    <input type="email" id="email-input" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+                    <input type="email" id="email-input" pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
                     " placeholder="seuemail@exemplo.com" required>
                 </fieldset>
 
