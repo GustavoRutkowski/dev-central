@@ -15,16 +15,7 @@ function renderContacts (arrayContacts) {
         `;
         
         ulContactsList.appendChild(liBase);
-
-
     })
-    const addContactBtn = `
-        <li title="Adicionar contato" class="contacts-list__add-contact">
-            <i class="fa-solid fa-plus"></i>
-        </li>
-    `;
-    ulContactsList.insertAdjacentHTML('beforeend', addContactBtn);
-
 };
 
 export default renderContacts;
