@@ -201,6 +201,7 @@ function levarParaInícioApósLogin(usuario) {
 - id (PK)
 - name
 - read_only
+- group_id (FK)
 
 ## Organizações:
 - id (PK)
