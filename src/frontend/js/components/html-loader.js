@@ -1,16 +1,16 @@
 class HTMLLoader {
     constructor ({ id, items, target }) {
-        if (typeof id != 'number') {
-            console.error('id is not a number.');
-            throw new TypeError('id is not a number.');
+        if (typeof id != 'string') {
+            console.error('id is not a string.');
+            throw new TypeError('id is not a string.');
         };
 
         if (!Array.isArray(items)) {
-            console.error('items is not a array.');
-            throw new TypeError('items is not a array.');
+            console.error('items is not an array.');
+            throw new TypeError('items is not an array.');
         };
-
-        if (!target instanceof HTMLElement) {
+        
+        if (!(target instanceof HTMLElement)) {
             console.error('target is not a HTMLElement.');
             throw new TypeError('target is not a HTMLElement.');
         };
@@ -19,37 +19,64 @@ class HTMLLoader {
         this.items = items;
         this.target = target;
 
-        this.default = items[0].id;
+        this.menuElement = document.getElementById(this.id);
+        this.itemsElements = this.menuElement.querySelectorAll('.options__option-btn');
+
+        this.default = items[0].id || null;
 
         items.forEach(e => {
             if (e.default) this.default = e.id;
         });
 
         this.itemsRendering = {};
+
+        const defaultElement = this.getItemById(this.default);
+
+        this.render(defaultElement);
+        this.addEvents();
     };
     
     // Fazer um método para adicionar os eventos
 
     async render(item) {
-        let response;
+        if (this.itemsRendering[item.id]) {
+            this.target.innerHTML = this.itemsRendering[item.id];
+            item?.action?.();
+            return;
+        };
 
-        if (!this.itemsRendering[item.id]) 
-            response = await fetch(item?.path);
-        
-        const itemHTML = await response?.text() || null;
-
-        this.itemsRendering[item.id] = itemHTML;
-        this.target.innerHTML = this.itemsRendering[item.id] || itemHTML;
+        if (item.path) {
+            const fetchResponse = await fetch(item?.path);
+            const itemHTML = await fetchResponse?.text();
+    
+            this.itemsRendering[item.id] = itemHTML;
+            this.target.innerHTML = this.itemsRendering[item.id] || itemHTML;
+        };
 
         item?.action?.();
     };
 
-    setBackground() {
-        
+    setSelected(element) {
+        this.itemsElements.forEach(e => {
+            e.classList.remove('options__option-btn--selected');
+        });
+
+        element.classList.add('options__option-btn--selected')
+    };
+
+    getItemById(id) {
+        return this.items.find(e => e.id === id) || null;
     };
 
     addEvents() {
+        this.itemsElements.forEach(e => {
+            const item = this.getItemById(e.id);
 
+            e.addEventListener('click', () => {
+                this.render(item)
+                this.setSelected(e);
+            });
+        });
     };
 };
 
