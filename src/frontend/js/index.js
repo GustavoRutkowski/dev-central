@@ -29,5 +29,27 @@ const contacts = [
     },
 ];
 
+const loaderConfig = {
+    id: 'options',
+
+    items: [
+        {
+            id: 's1',
+            path: './loader-pages/section1.html',
+            action: () => alert('SEÇÃO1'),
+        },
+        {
+            default: true,
+            id: 's2',
+            path: './loader-pages/section2.html',
+            action: () => alert('banana'),
+        },
+    ],
+
+    target: document.querySelector('div#result'),
+};
+
+new HTMLElement(loaderConfig);
+
 renderContacts(contacts);
 addModalEvents();
