@@ -10,7 +10,7 @@ function renderContacts (arrayContacts) {
         
         liBase.innerHTML = `
             <div class="contact__picture">
-                <img src="${element.img}" alt="${element.name}">
+                <img src="${element.profile_picture}" alt="${element.name}">
             </div>
         `;
         
