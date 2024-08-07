@@ -64,7 +64,7 @@ const loaderConfig = {
     target: document.querySelector('div#result'),
 };
 
-new HTMLElement(loaderConfig);
+// new HTMLElement(loaderConfig);
 
 renderContacts(contacts);
 addModalEvents();
