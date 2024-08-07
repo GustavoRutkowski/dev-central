@@ -3,29 +3,44 @@ import renderContacts from "./renders/render-contacts.js";
 
 const contacts = [
     {
+        id: '1',
         name: 'felipi',
-        number: '99524527',
-        img: "./imgs/contact-sample1.png"
+        description: 'sou o felipi',
+        email: 'felipi@gmail.com',
+        pass:'12345678',
+        profile_picture: "./imgs/contact-sample1.png"
     },
     {
+        id: '2',
         name: 'gustavo',
-        number: '99996660',
-        img: "imgs/contact-sample2.png"
+        description: 'sou o gustavo',
+        email: 'gustavo@gmail.com',
+        pass:'87654321',
+        profile_picture: "./imgs/contact-sample2.png"
     },
     {
+        id: '3',
         name: 'mordekai',
-        number: '99900088',
-        img: "imgs/contact-sample5.png"
+        description: 'sou o mordekai',
+        email: 'passaroAzul@gmail.com',
+        pass:'10101010',
+        profile_picture: "./imgs/contact-sample5.png"
     },
     {
+        id: '4',
         name: 'rigby',
-        number: '99900066',
-        img: "imgs/contact-sample4.png"
+        description: 'sou o rigby',
+        email: 'guaxinimMarrom@gmail.com',
+        pass:'senha123',
+        profile_picture: "./imgs/contact-sample4.png"
     },
     {
-        name: 'modekai falso',
-        number: '99900090',
-        img: "imgs/contact-sample3.png"
+        id: '5',
+        name: 'mordekai falso',
+        description: 'eu acho que sou o mordekai',
+        email: 'passaroAzulFake@gmail.com',
+        pass:'soumordekai',
+        profile_picture: "./imgs/contact-sample3.png"
     },
 ];
 
