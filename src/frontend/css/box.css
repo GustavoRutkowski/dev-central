@@ -54,9 +54,7 @@ button.sign-up-box__sign-up-btn {
 }
 
 
-fieldset.form__section > label {
-    font-weight: bold;
-}
+fieldset.form__section > label { font-weight: bold; }
 
 fieldset.form__section > input {
     padding: 8px;

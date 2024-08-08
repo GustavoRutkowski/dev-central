@@ -186,6 +186,7 @@ function levarParaInícioApósLogin(usuario) {
 - id (PK)
 - body
 - time_stamp
+- is_group
 - author_id (FK)
 - chat_id (FK)
 
