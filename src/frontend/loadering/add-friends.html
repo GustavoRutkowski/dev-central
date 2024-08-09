@@ -1,0 +1,35 @@
+<h2>Adicionar Amigo</h2>
+
+<form class="modal-content__form">
+    <label for="user-id">ID do Usuário:</label>
+    
+    <div class="form__add-user-container">
+        <input id="user-id" type="text" placeholder="#0000" pattern="#\d{4}" required>
+
+        <button class="btn-comp add-user-container__submit-btn" type="submit">
+            <i class="fa-solid fa-user-plus"></i>
+        </button>
+    </div>
+</form>
+
+<h2>Amigos</h2>
+
+<ul class="modal-content__friends-list">
+    <li class="friends-list__friend">
+        <div class="friend__picture">
+            <img src="./imgs/contact-sample1.png" alt="Tio Fábio">
+        </div>
+
+        <span>Tio Fábio</span>
+
+        <div class="friend__friend-buttons">
+            <button title="Conversar com Tio Fábio" class="friend-buttons__button msg-friend">
+                <i class="fa-solid fa-message"></i>
+            </button>
+
+            <button title="Desfazer Amizade" class="friend-buttons__button unfriend">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </div>
+    </li>
+</ul>

@@ -35,8 +35,6 @@ class HTMLLoader {
         this.render(defaultElement);
         this.addEvents();
     };
-    
-    // Fazer um método para adicionar os eventos
 
     async render(item) {
         if (this.itemsRendering[item.id]) {

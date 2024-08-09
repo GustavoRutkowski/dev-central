@@ -1,5 +1,6 @@
 import { modal, addModalEvents } from "./modules/modal.js";
 import renderContacts from "./renders/render-contacts.js";
+import HTMLLoader from "./components/html-loader.js";
 
 const contacts = [
     {
@@ -43,6 +44,27 @@ const contacts = [
         profile_picture: "./imgs/contact-sample3.png"
     },
 ];
+
+const loaderConfig = {
+    id: 'modal-options',
+
+    items: [
+        {
+            id: 'add-contact',
+            path: './loadering/add-friends.html',
+            action: () => console.log('Add Contact'),
+        },
+        {
+            id: 'pending-requests',
+            path: './loadering/pending-requests.html',
+            action: () => console.log('Pending Requests'),
+        },
+    ],
+
+    target: document.querySelector('.modal__modal-content'),
+};
+
+new HTMLLoader(loaderConfig);
 
 renderContacts(contacts);
 addModalEvents();

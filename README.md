@@ -186,8 +186,14 @@ function levarParaInícioApósLogin(usuario) {
 - id (PK)
 - body
 - time_stamp
+<<<<<<< HEAD
 - author_id (FK) //(USUARIOS)
 - chat_id (FK)   //(CHAT)
+=======
+- is_group
+- author_id (FK)
+- chat_id (FK)
+>>>>>>> 71b0060f33b1feee1131a51680787c7a0bb1fa07
 
 ## MembrosChats:
 - member_id (FK)
