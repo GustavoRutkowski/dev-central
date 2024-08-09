@@ -1,4 +1,4 @@
-import { modal, addModalEvents } from "./modules/modal.js";
+import { modals, addModalEvents } from "./modules/modal.js";
 import renderContacts from "./renders/render-contacts.js";
 import HTMLLoader from "./components/html-loader.js";
 
@@ -61,7 +61,12 @@ const loaderConfig = {
         },
     ],
 
-    target: document.querySelector('.modal__modal-content'),
+    target: document.querySelector('dialog#friends .components__modal-content'),
+    
+    classes: {
+        default: 'components__modal-header-option-btn',
+        selected: 'components__modal-header-option-btn--selected',
+    },
 };
 
 new HTMLLoader(loaderConfig);

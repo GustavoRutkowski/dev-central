@@ -65,20 +65,9 @@ fieldset.form__section > input {
 button.login-box__login-btn,
 button.sign-up-box__sign-up-btn {
     margin-bottom: 1rem;
-    padding: 8px;
-    border: none;
     width: 100%;
-    background-color: var(--secondary-color);
-    text-transform: uppercase;
     font-weight: bold;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.4s;
-}
-
-button.login-box__login-btn:hover,
-button.sign-up-box__sign-up-btn:hover {
-    opacity: 0.8;
+    text-transform: uppercase;
 }
 
 .login-box__sign-up-link,

@@ -1,5 +1,5 @@
 class HTMLLoader {
-    constructor ({ id, items, target }) {
+    constructor ({ id, items, target, classes }) {
         if (typeof id != 'string') {
             console.error('id is not a string.');
             throw new TypeError('id is not a string.');
@@ -18,9 +18,11 @@ class HTMLLoader {
         this.id = id;
         this.items = items;
         this.target = target;
+        this.classDefault = classes?.default || 'options__option-btn';
+        this.classSelected = classes?.selected || 'options__option-btn--selected';
 
         this.menuElement = document.getElementById(this.id);
-        this.itemsElements = this.menuElement.querySelectorAll('.options__option-btn');
+        this.itemsElements = this.menuElement.querySelectorAll(`.${this.classDefault}`);
 
         this.default = items[0].id || null;
 
@@ -56,10 +58,10 @@ class HTMLLoader {
 
     setSelected(element) {
         this.itemsElements.forEach(e => {
-            e.classList.remove('options__option-btn--selected');
+            e.classList.remove(this.classSelected);
         });
 
-        element.classList.add('options__option-btn--selected')
+        element.classList.add(this.classSelected);
     };
 
     getItemById(id) {

@@ -56,19 +56,19 @@
         <section id="conversation-area"></section>
     </main>
 
-    <dialog id="modal">
-        <header class="modal__modal-header">
-            <div id="modal-options" class="modal-header__options">
-                <button id="add-contact" class="options__option-btn options__option-btn--selected">Adicionar contato</button>
-                <button id="pending-requests" class="options__option-btn">Pedidos Pendentes</button>
+    <dialog class="components__modal" id="friends">
+        <header class="components__modal-header">
+            <div id="modal-options" class="components__modal-header-options">
+                <button id="add-contact" class="components__modal-header-option-btn components__modal-header-option-btn--selected">Adicionar contato</button>
+                <button id="pending-requests" class="components__modal-header-option-btn">Pedidos Pendentes</button>
             </div>
           
-            <button class="btn-comp modal-header__close-btn">
+            <button class="components__modal-header-close-btn components__btn">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </header>
         
-        <section class="modal__modal-content">...</section>
+        <section class="components__modal-content">...</section>
     </dialog>
 </body>
 </html>

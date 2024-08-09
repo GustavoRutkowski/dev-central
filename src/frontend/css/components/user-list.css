@@ -1,0 +1,40 @@
+.components__users-list { width: 100%; }
+
+/* user-list sub-components */
+
+.components__user {
+    padding: var(--default-padding);
+    font-size: 2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.components__user:hover { background-color: rgba(0, 0, 0, .4); }
+.components__user-picture { width: 4rem; height: 4rem; }
+
+.components__user-picture > img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.components__user-options {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--default-padding);
+}
+
+.components__option {
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.components__option:hover { color: var(--secondary-color); }
+
+/* user-list sub-components */
