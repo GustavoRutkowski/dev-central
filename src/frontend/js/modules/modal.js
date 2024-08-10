@@ -1,14 +1,13 @@
-const addContactBtn = document.querySelector('li.contacts-list__add-contact');
-const modals = document.querySelectorAll('.components__modal');
+function addModalEvents(modalBtn, modal) {
+    const closeModalBtn = modal
+    .querySelector('.components__modal-header-close-btn');
 
-function addModalEvents() {
-    modals.forEach(modal => {
-        const closeModalBtn = modal
-        .querySelector('.components__modal-header-close-btn');
-
-        addContactBtn.addEventListener('click', () => modal.showModal());
-        closeModalBtn.addEventListener('click', () => modal.close());
-    });
+    modalBtn.addEventListener('click', () => modal.showModal());
+    closeModalBtn.addEventListener('click', () => modal.close());
 };
 
-export { modals, addModalEvents };
+function addAllModalsEvents(modals) {
+    modals.forEach(modal => addModalEvents(modal.btn, modal.modal));
+};
+
+export { addModalEvents, addAllModalsEvents };

@@ -72,6 +72,7 @@ class HTMLLoader {
         this.itemsElements.forEach(e => {
             const item = this.getItemById(e.id);
 
+            console.log(e);
             e.addEventListener('click', () => {
                 this.render(item)
                 this.setSelected(e);

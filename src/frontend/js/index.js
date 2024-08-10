@@ -1,6 +1,6 @@
-import { modals, addModalEvents } from "./modules/modal.js";
+import { addAllModalsEvents } from "./modules/modal.js";
 import renderContacts from "./renders/render-contacts.js";
-import HTMLLoader from "./components/html-loader.js";
+import renderModals from "./renders/render-modals.js";
 
 const contacts = [
     {
@@ -45,31 +45,7 @@ const contacts = [
     },
 ];
 
-const loaderConfig = {
-    id: 'modal-options',
-
-    items: [
-        {
-            id: 'add-contact',
-            path: './loadering/add-friends.html',
-            action: () => console.log('Add Contact'),
-        },
-        {
-            id: 'pending-requests',
-            path: './loadering/pending-requests.html',
-            action: () => console.log('Pending Requests'),
-        },
-    ],
-
-    target: document.querySelector('dialog#friends .components__modal-content'),
-    
-    classes: {
-        default: 'components__modal-header-option-btn',
-        selected: 'components__modal-header-option-btn--selected',
-    },
-};
-
-new HTMLLoader(loaderConfig);
-
 renderContacts(contacts);
-addModalEvents();
+const modals = renderModals();
+
+addAllModalsEvents(modals);
