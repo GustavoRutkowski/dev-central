@@ -186,31 +186,30 @@ function levarParaInícioApósLogin(usuario) {
 - id (PK)
 - body
 - time_stamp
-- is_group
-- author_id (FK)
-- chat_id (FK)
+- author_id (FK) //(USUARIOS)
+- chat_id (FK)   //(CHAT)
 
 ## MembrosChats:
-- member_id
-- chat_id
+- member_id (FK)
+- chat_id (FK)
 
 ## MembrosOrganização:
-- member_id
-- organization_id
+- member_id (FK)
+- organization_id (FK)
 
 ## Chats:
 - id (PK)
 - name
 - read_only
-- group_id (FK)
+- group_id (FK) B
 
 ## Organizações:
-- id (PK)
+- id (PK) A
 - name
 
-## Categorias:
-- id (PK)
-- organization_id (FK)
+## Group:
+- id (PK) B
+- organization_id (FK) A
 
 ## Administrando:
 - admin_id (FK)
