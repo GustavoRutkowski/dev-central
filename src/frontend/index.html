@@ -33,14 +33,19 @@
     <main>
         <aside id="contacts">
             <ul class="contacts__contacts-list">
-                <li title="Adicionar contato" class="contacts-list__add-contact">
+                <li title="Contatos" class="contacts-list__add-contact">
                     <i class="fa-solid fa-users"></i>
                 </li>
+
                 <!-- Samples
                     <li title="Rafael Souza" class="contacts-list__contact">
                         <div class="contact__picture">
                             <img src="./imgs/contact-sample1.png" alt="Rafael Souza">
                         </div>
+                    </li>
+
+                    <li title="Criar novo Grupo" class="contacts-list__create-group">
+                        <i class="fa-solid fa-plus"></i>
                     </li>
                 -->
             </ul>
@@ -56,19 +61,34 @@
         <section id="conversation-area"></section>
     </main>
 
-    <dialog id="modal">
-        <header class="modal__modal-header">
-            <div id="modal-options" class="modal-header__options">
-                <button id="add-contact" class="options__option-btn options__option-btn--selected">Adicionar contato</button>
-                <button id="pending-requests" class="options__option-btn">Pedidos Pendentes</button>
+    <dialog class="components__modal" id="friends">
+        <header class="components__modal-header">
+            <div id="friends-options" class="components__modal-header-options">
+                <button id="add-contact" class="components__modal-header-option-btn components__modal-header-option-btn--selected">Adicionar contato</button>
+                <button id="pending-requests" class="components__modal-header-option-btn">Pedidos Pendentes</button>
             </div>
           
-            <button class="btn-comp modal-header__close-btn">
+            <button class="components__modal-header-close-btn components__btn">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </header>
         
-        <section class="modal__modal-content">...</section>
+        <section class="components__modal-content">...</section>
+    </dialog>
+
+    <dialog class="components__modal" id="groups">
+        <header class="components__modal-header">
+            <div id="groups-options" class="components__modal-header-options">
+                <button id="add-group" class="components__modal-header-option-btn components__modal-header-option-btn--selected">Criar Grupo</button>
+                <button id="add-organization" class="components__modal-header-option-btn">Criar Organização</button>
+            </div>
+          
+            <button class="components__modal-header-close-btn components__btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+        
+        <section class="components__modal-content">...</section>
     </dialog>
 </body>
 </html>

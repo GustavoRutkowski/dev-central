@@ -1,0 +1,9 @@
+.components__btn {
+    padding: var(--default-padding);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.components__btn:hover { opacity: .85; }

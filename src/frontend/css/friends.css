@@ -1,0 +1,21 @@
+form.modal-content__form {
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+form.modal-content__form > label,
+.form__add-user-container > input {
+    font-size: 1.5rem;
+}
+
+form.modal-content__form > label { font-weight: bold; }
+.form__add-user-container { display: flex; gap: 5px; }
+
+.form__add-user-container > input {
+    padding: 8px;
+    border-width: 2px solid gray;
+    width: 100%;
+}

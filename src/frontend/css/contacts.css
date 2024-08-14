@@ -13,7 +13,8 @@ ul.contacts__contacts-list {
 }
 
 li.contacts-list__contact,
-li.contacts-list__add-contact {
+li.contacts-list__add-contact,
+li.contacts-list__create-group {
     padding: var(--default-padding);
     cursor: pointer;
 }
@@ -25,11 +26,13 @@ a.user__settings:hover {
 }
 
 li.contacts-list__add-contact:hover > i,
+li.contacts-list__create-group:hover > i,
 a.user__settings:hover {
     color: var(--secondary-color);
 }
 
-li.contacts-list__add-contact > i {
+li.contacts-list__add-contact > i,
+li.contacts-list__create-group > i {
     width: 5rem;
     height: 5rem;
     color: #aaa;

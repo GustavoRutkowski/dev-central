@@ -1,6 +1,6 @@
-import { modal, addModalEvents } from "./modules/modal.js";
+import { addAllModalsEvents } from "./modules/modal.js";
 import renderContacts from "./renders/render-contacts.js";
-import HTMLLoader from "./components/html-loader.js";
+import renderModals from "./renders/render-modals.js";
 
 //import DO DJABO
 import addEventAddCheckUsersList from "./accept-or-reject.js";
