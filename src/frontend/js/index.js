@@ -2,9 +2,12 @@ import { modal, addModalEvents } from "./modules/modal.js";
 import renderContacts from "./renders/render-contacts.js";
 import HTMLLoader from "./components/html-loader.js";
 
+//import DO DJABO
+import addEventAddCheckUsersList from "./accept-or-reject.js";
+
 const contacts = [
     {
-        id: '1',
+        id: '#0001',
         name: 'felipi',
         description: 'sou o felipi',
         email: 'felipi@gmail.com',
@@ -12,7 +15,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample1.png"
     },
     {
-        id: '2',
+        id: '#0002',
         name: 'gustavo',
         description: 'sou o gustavo',
         email: 'gustavo@gmail.com',
@@ -20,7 +23,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample2.png"
     },
     {
-        id: '3',
+        id: '#0003',
         name: 'mordekai',
         description: 'sou o mordekai',
         email: 'passaroAzul@gmail.com',
@@ -28,7 +31,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample5.png"
     },
     {
-        id: '4',
+        id: '#0004',
         name: 'rigby',
         description: 'sou o rigby',
         email: 'guaxinimMarrom@gmail.com',
@@ -36,7 +39,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample4.png"
     },
     {
-        id: '5',
+        id: '#0005',
         name: 'mordekai falso',
         description: 'eu acho que sou o mordekai',
         email: 'passaroAzulFake@gmail.com',
@@ -52,7 +55,7 @@ const loaderConfig = {
         {
             id: 'add-contact',
             path: './loadering/add-friends.html',
-            action: () => console.log('Add Contact'),
+            action: () => addEventAddCheckUsersList(contacts),
         },
         {
             id: 'pending-requests',
@@ -68,3 +71,6 @@ new HTMLLoader(loaderConfig);
 
 renderContacts(contacts);
 addModalEvents();
+
+//check do DJABO
+//checkUserInList(contacts);
