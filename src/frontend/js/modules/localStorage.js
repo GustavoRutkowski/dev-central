@@ -22,3 +22,8 @@ function getItem(key){
     let newItem = localStorage.getItem(key);
     return JSON.parse(newItem);
 }
+
+
+export {
+    arrayToString, arrayToObject, setItem, getItemString, getItem
+}; 
