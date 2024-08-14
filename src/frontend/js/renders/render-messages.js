@@ -1,56 +1,36 @@
-const userLogged = {
-    name: "felipi",
-    id:"3"
-}
+// const userLogged = {
+//     id: 1,
+//     name: 'Gustavo',
+//     description: null,
+//     email: null,
+//     pass: null,
+//     profile_picture: './imgs/contact-sample1.png',
+// }
 
+// const messagesList = [
+//     {
+//         id: 1,
+//         body: "Lorem Ipsum Dolor Sit Amet...",
+//         time_stamps: '14/08/2024 - 15:18',
+//         author: userLogged,
+//         chat_id: null,
+//     },
+// ];
 
-const messagesList = [
-    {
-        body: "oii",
-        id_author: 1
-    },
-    {
-        body:"tudo",
-        id_author: 2
-    },
-    {
-        body: "não",
-        id_author: 3
-    },
-    {
-        body: "sim",
-        id_author: 4
-    }
-];
-
-const divBody = document.querySelector(".DentroDiv");
-const buts = document.querySelector("#buton");
-
-function renderMsg(messagesList){
-//console.log("oi");
+function renderMsg(userLogged, messagesList) {
+    const divBody = document.querySelector(".conversation-area__messages");
 
     messagesList.forEach((element) => {
-    const createDiv = document.createElement("div");
-    createDiv.setAttribute("class", "mensagem")
-    
-    if(element.id_author == userLogged.id){
-        createDiv.classList.add('minha');
+        const message = document.createElement('li');
+        message.classList.add('messages__message');
+        
+        const isMyMessage = element.author_id === userLogged.id
+        const myMsgClass = 'messages__message--my-msg'
 
-        createDiv.innerHTML += `essa é a minha mensagem "${element.body}" do remetente "eu" <br>`;
+        if (isMyMessage) message.classList.add(myMsgClass);
 
-        divBody.appendChild(createDiv);
-
-    }else{
-        createDiv.innerHTML += `essa é a mensagem "${element.body}" do remetente "${element.id_author}" <br>`;
-
-        divBody.appendChild(createDiv);
-
-    }
-
-    
-    divBody.appendChild(createDiv);
-  
-    })
+        divBody.appendChild(message);
+    });
 };
 
 //para poder usar em outros arquivos js

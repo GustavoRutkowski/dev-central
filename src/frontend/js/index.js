@@ -4,7 +4,7 @@ import renderModals from "./renders/render-modals.js";
 
 const contacts = [
     {
-        id: '1',
+        id: 1,
         name: 'felipi',
         description: 'sou o felipi',
         email: 'felipi@gmail.com',
