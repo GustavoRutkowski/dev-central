@@ -11,27 +11,44 @@
 //     {
 //         id: 1,
 //         body: "Lorem Ipsum Dolor Sit Amet...",
-//         time_stamps: '14/08/2024 - 15:18',
+//         time_stamp: '14/08/2024 - 15:18',
 //         author: userLogged,
 //         chat_id: null,
 //     },
 // ];
 
 function renderMsg(userLogged, messagesList) {
-    const divBody = document.querySelector(".conversation-area__messages");
+    const messagesContainer = document.querySelector(".conversation-area__messages");
 
-    messagesList.forEach((element) => {
+    messagesList.forEach(msg => {
         const message = document.createElement('li');
         message.classList.add('messages__message');
         
-        const isMyMessage = element.author_id === userLogged.id
-        const myMsgClass = 'messages__message--my-msg'
+        const isMyMessage = msg.author.id === userLogged.id;
+        const myMsgClass = 'messages__message--my-msg';
 
         if (isMyMessage) message.classList.add(myMsgClass);
 
-        divBody.appendChild(message);
+        message.innerHTML = `
+            <div class="message__message-infos">
+                <div class="message-infos__user-infos">
+                    <div class="user-infos__picture">
+                        <img src="./imgs/contact-sample3.png" alt="">
+                    </div>
+
+                    <span>Miguel Jeffersson</span>
+                </div>
+
+                <span class="message-infos__timestamp">${msg.time_stamp}</span>
+            </div>
+    
+            <section class="message__content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, laudantium!
+            </section>
+        `;
+
+        messagesContainer.appendChild(message);
     });
 };
 
-//para poder usar em outros arquivos js
 export default renderMsg;
