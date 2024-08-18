@@ -3,12 +3,12 @@
 ---
 
 ## [1] - Criar métodos CRUD das entidades do sistema.
-- **[1.1]** - Retornar os dados de cada entidade no localStorage.
+- ~~**[X]** - Criar a entidade dos Usuários já com os contatos dentro.~~
 
-- **[1.2]** - Criar uma nova entidade e inseri-la no localStorage.
+- **[1.2]** - Criar a entidade dos Chats já com as mensagens e autores dentro.
 
-- **[1.3]** - Atualizar os dados de cada entidade no localStorage.
-- **[1.4]** - Deletar os dados de cada entidade no localStorage.
+- **[1.3]** - Criar a entidade dos Grupos já com os membros e mensagens dentro.
+- **[1.4]** - Criar a entidade de Organizações já com seções, mensagens, admins e usuários dentro.
 
 ---
 

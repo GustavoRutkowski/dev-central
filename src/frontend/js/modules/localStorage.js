@@ -1,24 +1,26 @@
-//para Arrays
-function arrayToString(key, array) {
-    localStorage.setItem(key, JSON.stringify(array));
-}
+const localStorageHelper = {
+    getItem(key) {
+        if (typeof key !== 'string') {
+            console.error('key is not a string.');
+            throw new TypeError('key is not a string.');
+        };
 
-function arrayToObject(key) {
-    let newItem = localStorage.getItem(key);
-    return JSON.parse(newItem);
-}
+        const valueStringfy = localStorage.getItem(key);
+        
+        return JSON.parse(valueStringfy);
+    },
 
-//Para qualquer outra coisa
-function setItem(key, item) {
-    localStorage.setItem(key, JSON,stringify(item));
-}
+    setItem(key, value) {
+        if (typeof key !== 'string') {
+            console.error('key is not a string.');
+            throw new TypeError('key is not a string.');
+        };
 
-function getItemString(key) {
-    //devolve como String
-    localStorage.getItem(key);
-}
+        const valueStringfy = JSON.stringify(value);
 
-function getItem(key){
-    let newItem = localStorage.getItem(key);
-    return JSON.parse(newItem);
-}
+        localStorage.setItem(key, valueStringfy);
+        return valueStringfy;
+    },
+};
+
+export default localStorageHelper;
