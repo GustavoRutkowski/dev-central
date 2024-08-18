@@ -1,5 +1,3 @@
-import { addAllModalsEvents, addModalEvents } from "../modules/modal.js";
-
 const ulContactsList = document.querySelector(".contacts__contacts-list");
 
 function renderContacts (arrayContacts) {

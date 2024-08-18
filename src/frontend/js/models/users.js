@@ -175,3 +175,5 @@ class Users {
         return users;
     };
 };
+
+export default Users;
