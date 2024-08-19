@@ -2,34 +2,26 @@
 
 ---
 
-## [1] - Criar métodos CRUD das entidades do sistema.
-- ~~**[X]** - Criar a entidade dos Usuários já com os contatos dentro.~~
+- **[1]** - Criar uma página de descanso para quando nenhum contato estiver selecionado.
 
-- ~~**[X]** - Criar a entidade dos Chats Privados já com as mensagens e autores dentro.~~
+- **[2]** - Implementar os métodos CRUD no sistema.
 
-- **[1.3]** - Criar a entidade dos Grupos já com os membros e mensagens dentro.
-- **[1.4]** - Criar a entidade de Organizações já com seções, mensagens, admins e usuários dentro.
+- **[3]** - Implementar a funcionalidade de bloquear um usuário.
+    - **[3.1]** - Atualizar as entidades na classe `Users`.
+    - **[3.2]** - Fazer com que o botão de cadeado bloqueie ou desbloqueie um usuário.
 
----
+- **[4]** - Criar a página de configurações de Usuário.
+    - **[4.1]** - Criar o HTML e CSS da página.
+    - **[4.2]** - Vincular o HTML e CSS com as funções de CRUD.
 
-## [3] - Criar uma página de descanso para quando nenhum contato estiver selecionado.
+- **[5]** - Vincular o modal de amigos as suas funções CRUD.
 
----
+- **[6]** - Finalizar os métodos CRUD das entidades do sistema.
+    - **[6.1]** - Criar a entidade dos Grupos já com os membros e mensagens dentro.
+    - **[6.2]** - Criar a entidade de Organizações já com seções, mensagens e usuários dentro.
 
-## [4] - Implementar os métodos CRUD no sistema.
+- **[7]** - Finalizar o modal de Grupos.
+    - **[7.1]** - Criar o HTML e CSS dos loaderings.
+    - **[7.2]** - Vincular o HTML ao CRUD de Grupos.
 
----
-
-## [5] - Implementar a funcionalidade de bloquear um usuário.
-
----
-
-## [6] - Finalizar o modal de Grupos.
-- **[6.1]** - Criar o loader do modal.
-- **[6.2]** - Criar o HTML e CSS dos loaderings.
-
----
-
-## [7] - Fazer o restante das páginas.
-- **[7.1]** - Criar a página de configurações do perfil.
-- **[7.2]** - Criar uma página ou aba de convites para um grupo ou organização.
+- **[8]** - Criar uma página ou aba de convites para um grupo ou organização.

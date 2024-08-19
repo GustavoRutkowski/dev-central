@@ -77,10 +77,3 @@ section.message__content {
     padding: var(--double-padding);
     padding-top: var(--default-padding);
 }
-
-section.conversation-area__search-area {
-    width: 100%;
-    background-color: aqua;
-    color: #000;
-    font-size: 1.5rem;
-}
