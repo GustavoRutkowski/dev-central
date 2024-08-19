@@ -2,17 +2,26 @@ import { addAllModalsEvents } from "./modules/modal.js";
 import renderContacts from "./renders/render-contacts.js";
 import renderModals from "./renders/render-modals.js";
 
+const userLogged = {
+    id: 10,
+    name: 'Admin',
+    description: '',
+    email: 'admin@gmail.com',
+    pass: 'admin123',
+    profile_picture: "./imgs/contact-sample1.png",
+};
+
 const contacts = [
     {
         id: 1,
         name: 'felipi',
         description: 'sou o felipi',
         email: 'felipi@gmail.com',
-        pass:'12345678',
+        pass: '12345678',
         profile_picture: "./imgs/contact-sample1.png"
     },
     {
-        id: '2',
+        id: 2,
         name: 'gustavo',
         description: 'sou o gustavo',
         email: 'gustavo@gmail.com',
@@ -20,7 +29,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample2.png"
     },
     {
-        id: '3',
+        id: 3,
         name: 'mordekai',
         description: 'sou o mordekai',
         email: 'passaroAzul@gmail.com',
@@ -28,7 +37,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample5.png"
     },
     {
-        id: '4',
+        id: 4,
         name: 'rigby',
         description: 'sou o rigby',
         email: 'guaxinimMarrom@gmail.com',
@@ -36,7 +45,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample4.png"
     },
     {
-        id: '5',
+        id: 5,
         name: 'mordekai falso',
         description: 'eu acho que sou o mordekai',
         email: 'passaroAzulFake@gmail.com',
@@ -49,3 +58,4 @@ renderContacts(contacts);
 const modals = renderModals();
 
 addAllModalsEvents(modals);
+

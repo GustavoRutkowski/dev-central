@@ -6,6 +6,18 @@ section#conversation-area {
     flex-direction: column;
 }
 
+.conversation-area__rest-area {
+    margin: auto;
+    max-width: 50%;
+}
+
+.conversation-area__rest-area > img {
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    user-select: none;
+}
+
 ul.conversation-area__messages {
     padding: var(--large-padding);
     list-style: none;
