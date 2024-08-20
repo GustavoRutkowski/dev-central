@@ -3,6 +3,7 @@
 ---
 
 - **[1]** - Implementar os métodos CRUD no sistema.
+    - **[1.2]** - Implementar o sistema de contatos.
 
 - **[2]** - Implementar a funcionalidade de bloquear um usuário.
     - **[2.1]** - Atualizar as entidades na classe `Users`.

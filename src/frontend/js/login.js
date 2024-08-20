@@ -15,8 +15,8 @@ loginForm.addEventListener("submit", e => {
         pass: inputPass.value
     };
     
-    console.log(userTentactive);
-    console.log(users);
+    // console.log(userTentactive);
+    // console.log(users);
 
     tryLogin(userTentactive, users);
 });

@@ -123,34 +123,23 @@ class Users {
     };
 
     // Recebe um objeto somente com as informações que são relevantes para os contatos.
-    static addContactToUser(idUser, { id, name, description='', profile_picture='' }) {
+    static addContactToUser(idUser, idContact) {
         if (!idUser) {
             console.log('idUser is not defined.');
             throw new Error('idUser is not defined.');
         };
 
-        if (!id) {
-            console.log('id is not defined.');
-            throw new Error('id is not defined.');
-        };
-
-        if (!name) {
-            console.log('name is not defined.');
-            throw new Error('name is not defined.');
+        if (!idContact) {
+            console.log('idContact is not defined.');
+            throw new Error('idContact is not defined.');
         };
         
         const user = this.getUserById(idUser);
-
-        const contact = {
-            id,
-            name,
-            description,
-            profile_picture,
-        };
+        const contact = this.getUserById(idContact);
 
         user.contacts.push(contact);
 
-        this.updateUser(idUser, user);
+        this.updateUser(idUser, contact);
         return user;
     };
 

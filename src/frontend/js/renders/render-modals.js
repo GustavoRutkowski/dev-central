@@ -1,4 +1,5 @@
 import HTMLLoader from "../components/html-loader.js";
+import addContactsAction from "../actions/add-contact.js";
 
 const modalsButtonsClasses =  {
     default: 'components__modal-header-option-btn',
@@ -10,7 +11,7 @@ const friendsLoaderConfig = {
     target: document.querySelector('dialog#friends .components__modal-content'),
 
     items: [
-        { id: 'add-contact', path: './loadering/add-friends.html' },
+        { id: 'add-contact', path: './loadering/add-friends.html', action: addContactsAction },
         { id: 'pending-requests', path: './loadering/pending-requests.html' },
     ],
 

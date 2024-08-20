@@ -37,7 +37,7 @@ function loginUser(user, users) {
     });
 
     if (!userLogged) {
-        alert('USUÁRIO NÃO ENCONTRADO!!')
+        alert('USUÁRIO NÃO ENCONTRADO!');
         return null;
     };
 

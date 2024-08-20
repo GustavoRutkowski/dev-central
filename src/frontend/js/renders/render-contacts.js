@@ -13,7 +13,7 @@ function renderContacts (arrayContacts) {
         `;
         
         ulContactsList.appendChild(liBase);
-    })
+    });
 
     ulContactsList.insertAdjacentHTML('beforeend', `
         <li title="Criar novo Grupo" class="contacts-list__create-group">
