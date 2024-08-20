@@ -1,6 +1,15 @@
-function validateLogin(user, users) {
-    if (!validateEmail(user.email)) return;
-    if (!validatePass(user.pass)) return;
+import localStorageHelper from './localStorage.js';
+
+function tryLogin(user, users) {
+    if (!validateEmail(user.email)) {
+        alert('FORMATO DE EMAIL INVÁLIDO');
+        return;
+    };
+
+    if (!validatePass(user.pass)) {
+        alert('FORMATO DE SENHA INVÁLIDO');
+        return;
+    };
 
     loginUser(user, users);
 };
@@ -20,24 +29,22 @@ function validatePass(pass) {
 };
 
 function loginUser(user, users) {
-    let isLogged = false;
+    const userLogged = users.find(e => {
+        const emailFounded = e.email === user.email;
+        const passFounded = e.pass === user.password;
 
-    users.forEach(element => {
-        // console.log(element);
-        // console.log(user);
-
-        if (element.email === user.email && element.pass === user.pass) {
-            alert("logado meu cria");
-            isLogged = true;
-        };
+        return emailFounded && passFounded;
     });
 
-    if (!isLogged) {
-        alert("Errou meu parceiro, BANIDO!!!");
+    if (!userLogged) {
+        alert('USUÁRIO NÃO ENCONTRADO!!')
+        return null;
     };
 
-    return isLogged;
-}
-    
+    localStorageHelper.setItem('user-logged', userLogged);
+    location.href = '../index.html'
+ 
+    return userLogged;
+};
 
-export default validateLogin;
+export default tryLogin;

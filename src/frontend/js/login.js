@@ -1,37 +1,22 @@
-import validateLogin from "./modules/validate-login.js";
+import Users from "./models/users.js";
+import tryLogin from "./modules/validate-login.js";
 
-const users = [
-    {
-        email: 'adoadotueviado@gmail.com',
-        pass: 'banana123'
-    },
-    {
-        email: 'carroaalho@gmail.com',
-        pass: '12345678'
-    }
-];
-
+const loginForm = document.querySelector('.login-box__form');
 const inputEmail = document.querySelector("#email-input");
 const inputPass = document.querySelector("#pass-input");
-const loginButton = document.querySelector(".login-box__login-btn");
 
-const userTentactive = {
-    email: null,
-    pass: null
-};
-
-loginButton.addEventListener("submit", e => { 
+loginForm.addEventListener("submit", e => { 
     e.preventDefault();
-});
 
-loginButton.addEventListener("click", event => {
-    event.preventDefault();
+    const users = Users.getUsers();
 
-    userTentactive.email = inputEmail.value;
-    userTentactive.pass = inputPass.value;
-    //console.log(userTentactive);
+    const userTentactive = {
+        email: inputEmail.value,
+        pass: inputPass.value
+    };
+    
+    console.log(userTentactive);
+    console.log(users);
 
-    //console.log(users);
-
-    validateLogin(userTentactive, users);
+    tryLogin(userTentactive, users);
 });
