@@ -53,7 +53,7 @@ class Users {
     // READ
 
     static getUserById(id) {
-        if (!id) {
+        if (!id && id !== 0) {
             console.log('id is not defined.');
             throw new Error('id is not defined.');
         }
@@ -79,7 +79,7 @@ class Users {
     // UPDATE
 
     static updateUser(id, { contacts=[], name, description='', email, password, profile_picture='' }) {
-        if (!id) {
+        if (!id && id !== 0) {
             console.log('id is not defined.');
             throw new Error('id is not defined.');
         };
@@ -124,12 +124,12 @@ class Users {
 
     // Recebe um objeto somente com as informações que são relevantes para os contatos.
     static addContactToUser(idUser, idContact) {
-        if (!idUser) {
+        if (!idUser && idUser !== 0) {
             console.log('idUser is not defined.');
             throw new Error('idUser is not defined.');
         };
 
-        if (!idContact) {
+        if (!idContact && idContact !== 0) {
             console.log('idContact is not defined.');
             throw new Error('idContact is not defined.');
         };
@@ -139,7 +139,9 @@ class Users {
 
         user.contacts.push(contact);
 
-        this.updateUser(idUser, contact);
+        this.updateUser(idUser, user);
+
+        console.log(this.getUsers());
         return user;
     };
 

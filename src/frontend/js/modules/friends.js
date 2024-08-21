@@ -5,6 +5,7 @@ import localStorageHelper from "./localStorage.js";
 function addFriend(friendStrId) {
     const user = localStorageHelper.getItem('user-logged');
     const friendId = stringToId(friendStrId);
+    console.log(friendId);
     
     if (!user) {
         console.error('user not logged.');

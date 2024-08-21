@@ -1,26 +1,9 @@
-/*
-    <li class="components__user">
-        <div class="components__user-picture">
-            <img src="./imgs/contact-sample1.png" alt="Tio Fábio">
-        </div>
-
-        <span>Tio Fábio</span>
-
-        <div class="components__user-options">
-            <button title="Conversar com Tio Fábio" class="components__option">
-                <i class="fa-solid fa-message"></i>
-            </button>
-
-            <button title="Desfazer Amizade" class="components__option">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-        </div>
-    </li>
-*/
-
-const friendsList = document.querySelector('.components__users-list');
-
 function renderFriends(friendsArray) {
+    console.log(friendsArray)
+
+    const friendsList = document.querySelector('.components__users-list');
+    friendsList.innerHTML = '';
+
     friendsArray.forEach(friend => {
         const liFriend = document.createElement('li');
         liFriend.classList.add('components__user');
@@ -44,5 +27,9 @@ function renderFriends(friendsArray) {
                 </button>
             </div>
         `;
+
+        friendsList.appendChild(liFriend);
     });
 };
+
+export default renderFriends;

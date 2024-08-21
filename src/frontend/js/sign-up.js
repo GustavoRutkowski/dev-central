@@ -1,5 +1,4 @@
 import Users from "./models/users.js";
-import localStorageHelper from "./modules/localStorage.js";
 
 const signUpForm = document.querySelector('#sign-up-form');
 const nameInput = document.querySelector('#name-input');
