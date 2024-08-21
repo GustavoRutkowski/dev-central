@@ -2,12 +2,9 @@ import { addAllModalsEvents } from "./modules/modal.js";
 import renderContacts from "./renders/render-contacts.js";
 import renderModals from "./renders/render-modals.js";
 
-//import DO DJABO
-import addEventAddCheckUsersList from "./accept-or-reject.js";
-
 const contacts = [
     {
-        id: '#0001',
+        id: 1,
         name: 'felipi',
         description: 'sou o felipi',
         email: 'felipi@gmail.com',
@@ -15,7 +12,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample1.png"
     },
     {
-        id: '#0002',
+        id: '2',
         name: 'gustavo',
         description: 'sou o gustavo',
         email: 'gustavo@gmail.com',
@@ -23,7 +20,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample2.png"
     },
     {
-        id: '#0003',
+        id: '3',
         name: 'mordekai',
         description: 'sou o mordekai',
         email: 'passaroAzul@gmail.com',
@@ -31,7 +28,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample5.png"
     },
     {
-        id: '#0004',
+        id: '4',
         name: 'rigby',
         description: 'sou o rigby',
         email: 'guaxinimMarrom@gmail.com',
@@ -39,7 +36,7 @@ const contacts = [
         profile_picture: "./imgs/contact-sample4.png"
     },
     {
-        id: '#0005',
+        id: '5',
         name: 'mordekai falso',
         description: 'eu acho que sou o mordekai',
         email: 'passaroAzulFake@gmail.com',
@@ -48,29 +45,7 @@ const contacts = [
     },
 ];
 
-const loaderConfig = {
-    id: 'modal-options',
-
-    items: [
-        {
-            id: 'add-contact',
-            path: './loadering/add-friends.html',
-            action: () => addEventAddCheckUsersList(contacts),
-        },
-        {
-            id: 'pending-requests',
-            path: './loadering/pending-requests.html',
-            action: () => console.log('Pending Requests'),
-        },
-    ],
-
-    target: document.querySelector('.modal__modal-content'),
-};
-
-new HTMLLoader(loaderConfig);
-
 renderContacts(contacts);
-addModalEvents();
+const modals = renderModals();
 
-//check do DJABO
-//checkUserInList(contacts);
+addAllModalsEvents(modals);

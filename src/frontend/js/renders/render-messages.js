@@ -1,57 +1,54 @@
-const userLogged = {
-    name: "felipi",
-    id:"3"
-}
+// const userLogged = {
+//     id: 1,
+//     name: 'Gustavo',
+//     description: null,
+//     email: null,
+//     pass: null,
+//     profile_picture: './imgs/contact-sample1.png',
+// }
 
+// const messagesList = [
+//     {
+//         id: 1,
+//         body: "Lorem Ipsum Dolor Sit Amet...",
+//         time_stamp: '14/08/2024 - 15:18',
+//         author: userLogged,
+//         chat_id: null,
+//     },
+// ];
 
-const messagesList = [
-    {
-        body: "oii",
-        id_author: 1
-    },
-    {
-        body:"tudo",
-        id_author: 2
-    },
-    {
-        body: "não",
-        id_author: 3
-    },
-    {
-        body: "sim",
-        id_author: 4
-    }
-];
+function renderMsg(userLogged, messagesList) {
+    const messagesContainer = document.querySelector(".conversation-area__messages");
 
-const divBody = document.querySelector(".DentroDiv");
-const buts = document.querySelector("#buton");
+    messagesList.forEach(msg => {
+        const message = document.createElement('li');
+        message.classList.add('messages__message');
+        
+        const isMyMessage = msg.author.id === userLogged.id;
+        const myMsgClass = 'messages__message--my-msg';
 
-function renderMsg(messagesList){
-//console.log("oi");
+        if (isMyMessage) message.classList.add(myMsgClass);
 
-    messagesList.forEach((element) => {
-    const createDiv = document.createElement("div");
-    createDiv.setAttribute("class", "mensagem")
+        message.innerHTML = `
+            <div class="message__message-infos">
+                <div class="message-infos__user-infos">
+                    <div class="user-infos__picture">
+                        <img src="./imgs/contact-sample3.png" alt="">
+                    </div>
+
+                    <span>Miguel Jeffersson</span>
+                </div>
+
+                <span class="message-infos__timestamp">${msg.time_stamp}</span>
+            </div>
     
-    if(element.id_author == userLogged.id){
-        createDiv.classList.add('minha');
+            <section class="message__content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, laudantium!
+            </section>
+        `;
 
-        createDiv.innerHTML += `essa é a minha mensagem "${element.body}" do remetente "eu" <br>`;
-
-        divBody.appendChild(createDiv);
-
-    }else{
-        createDiv.innerHTML += `essa é a mensagem "${element.body}" do remetente "${element.id_author}" <br>`;
-
-        divBody.appendChild(createDiv);
-
-    }
-
-    
-    divBody.appendChild(createDiv);
-  
-    })
+        messagesContainer.appendChild(message);
+    });
 };
 
-//para poder usar em outros arquivos js
 export default renderMsg;

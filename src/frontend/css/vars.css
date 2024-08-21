@@ -2,6 +2,7 @@
     --main-color: #232323; 
     --secondary-color: #69ff8a;
     --border-color: #131313;
+    --border-white-color: rgba(255, 255, 255, 0.5);
     --default-padding: 1rem;
     --double-padding: calc(var(--default-padding) * 2);
     --large-padding: calc(var(--double-padding) * 2);
