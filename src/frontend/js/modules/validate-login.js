@@ -40,4 +40,4 @@ function loginUser(user, users) {
 }
     
 
-export default validateLogin;
+export {validateLogin, validateEmail, validatePass};
