@@ -11,7 +11,6 @@ function addContactsAction() {
     usersForm.addEventListener('submit', e => {
         e.preventDefault();
                     
-        console.log(userIdInput.value)
         addFriend(userIdInput.value);
 
         renderFriends(userLogged.contacts);

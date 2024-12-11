@@ -1,0 +1,5 @@
+# Configurações adicionais para o servidor, ignore isso.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ api.php?path=$1 [QSA,L] # Sempre que dermos /VALOR no index.php, será como usar ?path=VALOR
