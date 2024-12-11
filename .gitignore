@@ -1,2 +1,3 @@
 /samples/*
 /src/backend/config.php
+.env
