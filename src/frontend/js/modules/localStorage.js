@@ -18,9 +18,13 @@ const localStorageHelper = {
 
         const valueStringfy = JSON.stringify(value);
 
-        localStorage.setItem(key, valueStringfy);
-        return valueStringfy;
-    },
-};
+function getItem(key){
+    let newItem = localStorage.getItem(key);
+    return JSON.parse(newItem);
+}
 
-export default localStorageHelper;
+
+export {
+    arrayToString, arrayToObject, setItem, getItemString, getItem
+    }
+}
