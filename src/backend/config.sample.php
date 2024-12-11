@@ -1,5 +1,5 @@
 <?php
-$host = '';
-$db_name = '';
-$username = '';
+$host = '127.0.0.1';
+$db_name = 'db_dev_central';
+$username = 'root';
 $password = '';

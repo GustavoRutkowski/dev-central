@@ -7,7 +7,7 @@ class Router {
         $method = $_SERVER['REQUEST_METHOD'];
         $path = $_GET['path'];
 
-        foreach (self::routes as $route) {
+        foreach (self::$routes as $route) {
             if ($route['method'] !== $method) continue;
             if ($route['path'] !== $path) continue;
 
@@ -23,7 +23,7 @@ class Router {
 
     private static function addRoute($method, $path, $callback) {
         // ARRAY[] = VALUE // É como usar um ARRAY.push(VALUE) no JavaScript
-        self::routes[] = [
+        self::$routes[] = [
             'method' => $method,
             'path' => $path,
             'callback' => $callback
@@ -31,19 +31,19 @@ class Router {
     }
 
     // Métodos para criar rotas:
-    public function get($path, $callback) {
+    public static function get($path, $callback) {
         self::addRoute('GET', $path, $callback);
     }
 
-    public function post($path, $callback) {
+    public static function post($path, $callback) {
         self::addRoute('POST', $path, $callback);
     }
 
-    public function put($path, $callback) {
+    public static function put($path, $callback) {
         self::addRoute('PUT', $path, $callback);
     }
 
-    public function delete($path, $callback) {
+    public static function delete($path, $callback) {
         self::addRoute('DELETE', $path, $callback);
     }
 }
