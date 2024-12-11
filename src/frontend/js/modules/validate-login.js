@@ -1,6 +1,8 @@
-import localStorageHelper from './localStorage.js';
+import Users from '../models/users.js';
 
-function tryLogin(user, users) {
+function tryLogin(user) {
+    console.log(user);
+
     if (!validateEmail(user.email)) {
         alert('FORMATO DE EMAIL INVÁLIDO');
         return;
@@ -11,7 +13,7 @@ function tryLogin(user, users) {
         return;
     };
 
-    loginUser(user, users);
+    loginUser(user);
 };
 
 function validateEmail(email) {
@@ -28,23 +30,19 @@ function validatePass(pass) {
     return true;
 };
 
-function loginUser(user, users) {
-    const userLogged = users.find(e => {
-        const emailFounded = e.email === user.email;
-        const passFounded = e.pass === user.password;
+async function loginUser(user) {
+    const userLogged = await Users.login(user.email, user.pass);
+    console.log(userLogged)
 
-        return emailFounded && passFounded;
-    });
-
-    if (!userLogged) {
+    if (userLogged.type === 'ERROR') {
         alert('USUÁRIO NÃO ENCONTRADO!');
         return null;
-    };
+    }
 
-    localStorageHelper.setItem('user-logged', userLogged);
+    // localStorageHelper.setItem('user-logged', userLogged);
     location.href = '../index.html'
  
     return userLogged;
-};
+}
 
 export default tryLogin;

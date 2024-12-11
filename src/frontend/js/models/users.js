@@ -76,6 +76,16 @@ class Users {
         return users || [];
     };
 
+    static async login(email, pass) {
+        const res = await fetch("http://localhost/dev-central/src/backend/api/?path=/login", {
+            method: 'POST',
+            headers: new Headers().set('Content-Type', 'application/json'),
+            body: JSON.stringify({ email, pass })
+        });
+        const loginData = await res.json();
+        return loginData || []; 
+    }
+
     // UPDATE
 
     static updateUser(id, { contacts=[], name, description='', email, password, profile_picture='' }) {
