@@ -6,6 +6,9 @@ require 'models/login.php';
 require 'models/sing-up.php';
 require 'models/user-info.php';
 require 'models/addContact.php';
+require 'models/sendMessage.php';
+require 'models/getMessage.php';
+
 // Headers:
 header('Content-type: application/json'); // Define que a API vai usar JSON
 header('Access-Control-Allow-Origin: localhost:5500'); // Define que a API pode ser utilizada em outras origens
@@ -26,5 +29,7 @@ Router::post('/login', 'login');
 Router::post('/register', 'register');
 Router::get('/user-info', 'user-info');
 Router::post('/addContact', 'addContact');
+Router::post('/sendMessage','sendMessage');
+Router::get('/getMessage','getMessage');
 
 Router::handleRequests();
