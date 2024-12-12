@@ -1,45 +1,45 @@
 <?php
-if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['pass'])) {
-    echo json_encode([
-        "type" => "Error",
-        "message" => "Faltam dados obrigatórios (nome, email ou senha)"
-    ]);
-    exit;
-}
+require_once 'connection.php';
 
-$newUser = [
-    'name' => $_POST['name'],
-    'email' => $_POST['email'],
-    'pass' => $_POST['pass']
-];
+function register() {
+    global $connection;
 
-$newUser['pass'] = password_hash($newUser['pass'], PASSWORD_DEFAULT);
+    header('Access-Control-Allow-Origin: *'); // Define que a API pode ser utilizada em outras origens
+    header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
 
-require 'connection.php';
+    $body = file_get_contents('php://input');
+    $dataRaw = json_decode($body);
+    $data = json_decode(json_encode($dataRaw), true);
+    //var_dump($data);
 
-$query = 'INSERT INTO users (name, email, pass) VALUES (:nameP, :emailP, :passP)';
-$stmt = $conn->prepare($query);
+    if (!isset($data['email']) || !isset($data['pass']) || !isset($data['username'])) {
+        echo json_encode([
+            "type" => "Error",
+            "message" => "Faltam dados obrigatorios (nome, email ou senha)"
+        ]);
+        exit;
+    }
 
-// $stmt->bindParam(':nameP', $newUser['name']);
-// $stmt->bindParam(':emailP', $newUser['email']);
-// $stmt->bindParam(':passP', $newUser['pass']);
-$stmt->bindParam(':nameP', $newUser['name'], PDO::PARAM_STR);
-$stmt->bindParam(':emailP', $newUser['email'], PDO::PARAM_STR);
-$stmt->bindParam(':passP', $newUser['pass'], PDO::PARAM_STR);
+    $query = "INSERT INTO users (name, email, pass) VALUES (\"{$data['username']}\", \"{$data['email']}\", \"{$data['pass']}\")";
+    $stmt = $connection->prepare($query);
 
-
-
-if ($stmt->execute()) {
-    $response = [
-        "type" => "Success",
-        "message" => "Usuário cadastrado com sucesso!"
-    ];
-    echo json_encode($response);
-} else {
-    $response = [
-        "type" => "Error",
-        "message" => "O Usuário não foi cadastrado. Tente novamente."
-    ];
-    echo json_encode($response);
-}
-exit;
+    $stmt->execute();
+    
+    if ($stmt->rowCount() != 1) {
+        $response = [
+            "type" => "ERROR",
+            "message" => "usuario nao registrado"
+        ];
+        echo json_encode($response);
+        exit;
+    }
+    
+    if ($stmt->rowCount() == 1) {
+        $response = [
+            "type" => "SUCCESS",
+            "message" => "usuario registrado com sucesso!"
+        ];
+        echo json_encode($response);
+        exit;
+    }
+};

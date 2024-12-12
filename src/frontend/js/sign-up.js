@@ -5,7 +5,7 @@ const nameInput = document.querySelector('#name-input');
 const emailInput = document.querySelector('#email-input');
 const passInput = document.querySelector('#pass-input');
 
-signUpForm.addEventListener('submit', e => {
+signUpForm.addEventListener('submit', async e => {
     e.preventDefault();
 
     Users.createUser({
@@ -17,4 +17,21 @@ signUpForm.addEventListener('submit', e => {
     });
 
     location.href = './login.html';
+
+
+
+
+
+
+// O QUE EU FIZ
+
+    // const res = await fetch("http://localhost/dev-central/src/backend/api/?path=/register", {
+    //     method: 'POST',
+    //     headers: new Headers().set('Content-Type', 'application/json'),
+    //     body: JSON.stringify({username, email, pass})
+    // });
+
+    // const registerData = await res.json();
+    // return registerData || [];
+
 });

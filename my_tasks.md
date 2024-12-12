@@ -2,6 +2,29 @@
 
 ## vou deixar aqui os scripts do banco que fiz como primeiro modelo, o nome da tabela grupos ficou como teams pois n sei pq o workbench n deixa colocar como groups.
 
+//NOVA TABELA
+
+CREATE TABLE contacts (
+    contact_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    user_id INT NOT NULL,          -- O usuário que adiciona o contato
+    contact_user_id INT NOT NULL,  -- O usuário que é o contato
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (contact_user_id) REFERENCES users(user_id),
+    UNIQUE (user_id, contact_user_id) -- Garante que o mesmo contato não seja adicionado várias vezes
+);
+
+// VALORES PRA USERS
+
+insert into users (name, email, pass) values ('FELIPI GABRIEL HAAG MACHADO', 'felipi@gmail.com', '12345678'),
+											 ('GUSTAVO NARA', 'gustavo@gmail.com', '123456789'),
+                                             ('ALEXANDRE PERNA FINA', 'alexandre@gmail.com', '12345678910'),
+                                             ('OSIAS ORELHA DE ABANO', 'osias@gmail.com', '98765431'),
+                                             ('ÂNTONIO JOSÉ DE ANCHIETA', 'antonim@gmail.com', '11558899'),
+                                             ('LÁZARO BARBOSA', 'escondido@gmail.com', 'cadevc123');
+
+
+
+
 create database db_dev_central;
 use db_dev_central;
 
